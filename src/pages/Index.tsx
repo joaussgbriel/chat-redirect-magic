@@ -4,6 +4,11 @@ import logo from "@/assets/niscar-logo.png";
 
 const Index = () => {
   useEffect(() => {
+    // Dispara evento Lead do Meta Pixel
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead');
+    }
+
     const timer = setTimeout(() => {
       window.location.href = "https://api.whatsapp.com/send/?phone=351935373988";
     }, 3000);
