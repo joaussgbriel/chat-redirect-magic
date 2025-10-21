@@ -16,7 +16,8 @@ const Index = () => {
     }
 
     const timer = setTimeout(() => {
-      window.location.href = "https://api.whatsapp.com/send/?phone=351935373988";
+      const mensagem = encodeURIComponent("Olá! Gostaria de agendar uma lavagem com vocês!");
+      window.location.href = `https://api.whatsapp.com/send/?phone=351935373988&text=${mensagem}`;
     }, 3000);
 
     return () => clearTimeout(timer);
